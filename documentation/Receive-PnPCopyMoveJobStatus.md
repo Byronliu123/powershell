@@ -23,8 +23,8 @@ This cmdlets outputs the results of a pending/finished copy or move job.
 
 ### Example 1
 ```powershell
-$job = Copy-PnPFile -SourceUrl "Shared Documents/company.docx" -TargetUrl "SubSite2/Shared Documents" -NoWait
-$jobStatus = Receive-PnPCopyMoveJobStatus -Job $result
+$job = Copy-PnPFile -SourceUrl "Shared Documents/company.docx" -TargetUrl "SubSite2/Shared Documents" -Overwrite -NoWait
+$jobStatus = Receive-PnPCopyMoveJobStatus -Job $Job
 if($jobStatus.JobState == 0)
 {
   Write-Host "Job finished"
